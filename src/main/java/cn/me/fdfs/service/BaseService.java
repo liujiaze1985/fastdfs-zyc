@@ -5,16 +5,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by IntelliJ IDEA.
- * User: LZS
- * Date: 11-7-6
- * Time: 下午1:47
+ * Created by IntelliJ IDEA. User: LZS Date: 11-7-6 Time: 下午1:47
  */
 public abstract class BaseService {
-    @Autowired
-    protected SessionFactory sessionFactory;
+  @Autowired
+  protected SessionFactory sessionFactory;
 
-    protected Session getSession() {
-        return sessionFactory.getCurrentSession();
-    }
+  protected Session getSession() {
+    return sessionFactory.getCurrentSession();
+  }
 }

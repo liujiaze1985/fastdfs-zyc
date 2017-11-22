@@ -399,7 +399,7 @@ CREATE TABLE `tbwarninguser` (
 --  Records of `tbwarninguser`
 -- ----------------------------
 BEGIN;
-INSERT INTO `tbwarninguser` VALUES ('ff80808139b3345d0139b405791e048f', 'jing.zhang@vivame.cn', '张静', '999999999999999999999999');
+INSERT INTO `tbwarninguser` VALUES ('ff80808139b3345d0139b405791e048f', 'jiaze.liu@outlook.com', '刘嘉泽', '18511011951');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

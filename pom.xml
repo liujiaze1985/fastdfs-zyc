@@ -7,6 +7,12 @@
 	<version>1.0</version>
 	<name>fastdfs-zyc Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>
+		<project.hibernate.version>4.2.2.final</project.hibernate.version>
+		<jackson.version>2.5.0</jackson.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -24,11 +30,6 @@
 			<version>3.1.2.RELEASE</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.6</version>
-		</dependency>
-		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.9</version>
@@ -38,12 +39,12 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.csource</groupId>
-			<artifactId>fastdfs-client-java</artifactId>
-			<version>1.27-SNAPSHOT</version>
+			<artifactId>fastdfs-client</artifactId>
+			<version>1.25</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/fastdfs-client.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>ch.ethz.ganymed</groupId>
@@ -58,17 +59,24 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.1.6.Final</version>
+			<version>${project.hibernate.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${project.hibernate.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>5.1.21</version> </dependency> -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.21</version>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax</groupId>
@@ -108,6 +116,32 @@
 			<artifactId>jsch</artifactId>
 			<version>0.1.46</version>
 		</dependency>
+		<!-- logback -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>1.6.5</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>fastdfs-zyc</finalName>
@@ -132,11 +166,5 @@
 		</plugins>
 	</build>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdk.version>1.8</jdk.version>
-		<!-- <spring.version>4.1.4.RELEASE</spring.version> <hibernate.version>4.3.8.Final</hibernate.version> -->
-		<jackson.version>2.5.0</jackson.version>
 
-	</properties>
 </project>
